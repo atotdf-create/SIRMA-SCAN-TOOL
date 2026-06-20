@@ -9,7 +9,7 @@
   ╚████╔╝ ██║     ██║ ╚████║      ██║  ██╗██║██║ ╚████║╚██████╔╝
    ╚═══╝  ╚═╝     ╚═╝  ╚═══╝      ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝
 
-           👑 VPN-KING SCANNER – BY SIRMA & TDF 👑
+           👑 VPN-KING SCANNER – BY Eden lite & TDF 👑
         Advanced Subdomain Recon & Network Analysis Tool
 """
 
