@@ -930,7 +930,453 @@ def main():
                 ssl_certificate_info()
             elif choice == "12":
                 change_password()
-            elif choice == "0" or choice == "00":
+            if choice == "9" or choice == "09":
+    print("""
+╔══════════════════════════════════════╗
+║          BANNER GRABBING             ║
+╠══════════════════════════════════════╣
+║  1 • Basic Banner                    ║
+║  2 • HTTP Banner                     ║
+║  3 • HTTPS Banner                    ║
+║  4 • Service Information             ║
+║  5 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("BANNER > ").strip()
+
+    if sub_choice == "1":
+        basic_banner_check()
+    elif sub_choice == "2":
+        http_banner_check()
+    elif sub_choice == "3":
+        https_banner_check()
+    elif sub_choice == "4":
+        service_information()
+
+elif choice == "10" or choice == "010":
+    print("""
+╔══════════════════════════════════════╗
+║          HTTP HEADERS                ║
+╠══════════════════════════════════════╣
+║  1 • Request Headers                 ║
+║  2 • Response Headers                ║
+║  3 • Security Headers                ║
+║  4 • Redirect Check                  ║
+║  5 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("HEADERS > ").strip()
+
+    if sub_choice == "1":
+        request_headers()
+    elif sub_choice == "2":
+        response_headers()
+    elif sub_choice == "3":
+        security_headers()
+    elif sub_choice == "4":
+        redirect_check()
+
+elif choice == "11" or choice == "011":
+    print("""
+╔══════════════════════════════════════╗
+║             SSL / TLS                ║
+╠══════════════════════════════════════╣
+║  1 • Certificate Information         ║
+║  2 • TLS Information                 ║
+║  3 • Certificate Expiry              ║
+║  4 • Cipher Information              ║
+║  5 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("SSL > ").strip()
+
+    if sub_choice == "1":
+        certificate_information()
+    elif sub_choice == "2":
+        tls_information()
+    elif sub_choice == "3":
+        certificate_expiration()
+    elif sub_choice == "4":
+        cipher_information()
+
+elif choice == "12" or choice == "012":
+    print("""
+╔══════════════════════════════════════╗
+║          PASSWORD TOOLS              ║
+╠══════════════════════════════════════╣
+║  1 • Change Password                 ║
+║  2 • Generate Password               ║
+║  3 • Password Strength               ║
+║  4 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("PASSWORD > ").strip()
+
+    if sub_choice == "1":
+        change_password()
+    elif sub_choice == "2":
+        generate_password()
+    elif sub_choice == "3":
+        password_strength()
+
+elif choice == "13" or choice == "013":
+    print("""
+╔══════════════════════════════════════╗
+║            DNS RECORDS               ║
+╠══════════════════════════════════════╣
+║  1 • A Record                        ║
+║  2 • AAAA Record                    ║
+║  3 • MX Record                      ║
+║  4 • NS Record                      ║
+║  5 • TXT Record                     ║
+║  6 • CNAME Record                   ║
+║  7 • All Records                    ║
+║  8 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("DNS > ").strip()
+
+    if sub_choice == "1":
+        dns_a_record()
+    elif sub_choice == "2":
+        dns_aaaa_record()
+    elif sub_choice == "3":
+        dns_mx_record()
+    elif sub_choice == "4":
+        dns_ns_record()
+    elif sub_choice == "5":
+        dns_txt_record()
+    elif sub_choice == "6":
+        dns_cname_record()
+    elif sub_choice == "7":
+        dns_all_records()
+
+elif choice == "14" or choice == "014":
+    print("""
+╔══════════════════════════════════════╗
+║          REVERSE DNS                 ║
+╠══════════════════════════════════════╣
+║  1 • Reverse Lookup                  ║
+║  2 • Hostname Lookup                 ║
+║  3 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("REVERSE DNS > ").strip()
+
+    if sub_choice == "1":
+        reverse_lookup()
+    elif sub_choice == "2":
+        hostname_lookup()
+
+elif choice == "15" or choice == "015":
+    print("""
+╔══════════════════════════════════════╗
+║              WHOIS                   ║
+╠══════════════════════════════════════╣
+║  1 • Domain WHOIS                    ║
+║  2 • IP WHOIS                        ║
+║  3 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("WHOIS > ").strip()
+
+    if sub_choice == "1":
+        domain_whois()
+    elif sub_choice == "2":
+        ip_whois()
+
+elif choice == "16" or choice == "016":
+    print("""
+╔══════════════════════════════════════╗
+║          IP GEOLOCATION              ║
+╠══════════════════════════════════════╣
+║  1 • Country                         ║
+║  2 • City                            ║
+║  3 • ISP                             ║
+║  4 • ASN                             ║
+║  5 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("GEO > ").strip()
+
+    if sub_choice == "1":
+        ip_country()
+    elif sub_choice == "2":
+        ip_city()
+    elif sub_choice == "3":
+        ip_isp()
+    elif sub_choice == "4":
+        ip_asn()
+
+elif choice == "17" or choice == "017":
+    print("""
+╔══════════════════════════════════════╗
+║              PING                    ║
+╠══════════════════════════════════════╣
+║  1 • Single Ping                     ║
+║  2 • Connectivity Test               ║
+║  3 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("PING > ").strip()
+
+    if sub_choice == "1":
+        single_ping()
+    elif sub_choice == "2":
+        ping_connectivity()
+
+elif choice == "18" or choice == "018":
+    print("""
+╔══════════════════════════════════════╗
+║           TRACEROUTE                 ║
+╠══════════════════════════════════════╣
+║  1 • IPv4                            ║
+║  2 • IPv6                            ║
+║  3 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("TRACE > ").strip()
+
+    if sub_choice == "1":
+        traceroute_ipv4()
+    elif sub_choice == "2":
+        traceroute_ipv6()
+
+elif choice == "19" or choice == "019":
+    print("""
+╔══════════════════════════════════════╗
+║           HTTP STATUS                ║
+╠══════════════════════════════════════╣
+║  1 • HTTP Status                     ║
+║  2 • HTTPS Status                    ║
+║  3 • Redirect Check                  ║
+║  4 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("STATUS > ").strip()
+
+    if sub_choice == "1":
+        http_status()
+    elif sub_choice == "2":
+        https_status()
+    elif sub_choice == "3":
+        redirect_check()
+
+elif choice == "20" or choice == "020":
+    print("""
+╔══════════════════════════════════════╗
+║        NETWORK INFORMATION           ║
+╠══════════════════════════════════════╣
+║  1 • Interfaces                      ║
+║  2 • Routing Table                   ║
+║  3 • DNS Configuration               ║
+║  4 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("NETWORK > ").strip()
+
+    if sub_choice == "1":
+        network_interfaces()
+    elif sub_choice == "2":
+        routing_table()
+    elif sub_choice == "3":
+        dns_configuration()
+
+elif choice == "21" or choice == "021":
+    print("""
+╔══════════════════════════════════════╗
+║          SUBDOMAIN TOOLS             ║
+╠══════════════════════════════════════╣
+║  1 • Basic Enumeration               ║
+║  2 • DNS Enumeration                 ║
+║  3 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("SUBDOMAIN > ").strip()
+
+    if sub_choice == "1":
+        basic_subdomain_scan()
+    elif sub_choice == "2":
+        dns_subdomain_scan()
+
+elif choice == "22" or choice == "022":
+    print("""
+╔══════════════════════════════════════╗
+║         DOMAIN INFORMATION           ║
+╠══════════════════════════════════════╣
+║  1 • Domain Info                     ║
+║  2 • DNS Info                        ║
+║  3 • Registration Info               ║
+║  4 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("DOMAIN > ").strip()
+
+    if sub_choice == "1":
+        domain_info()
+    elif sub_choice == "2":
+        domain_dns_info()
+    elif sub_choice == "3":
+        registration_info()
+
+elif choice == "23" or choice == "023":
+    print("""
+╔══════════════════════════════════════╗
+║             LOCAL IP                 ║
+╠══════════════════════════════════════╣
+║  1 • IPv4                            ║
+║  2 • IPv6                            ║
+║  3 • Gateway                         ║
+║  4 • Interfaces                      ║
+║  5 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("LOCAL IP > ").strip()
+
+    if sub_choice == "1":
+        local_ipv4()
+    elif sub_choice == "2":
+        local_ipv6()
+    elif sub_choice == "3":
+        local_gateway()
+    elif sub_choice == "4":
+        local_interfaces()
+
+elif choice == "24" or choice == "024":
+    print("""
+╔══════════════════════════════════════╗
+║             PUBLIC IP                ║
+╠══════════════════════════════════════╣
+║  1 • Public IPv4                     ║
+║  2 • Public IPv6                     ║
+║  3 • IP Information                  ║
+║  4 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("PUBLIC IP > ").strip()
+
+    if sub_choice == "1":
+        public_ipv4()
+    elif sub_choice == "2":
+        public_ipv6()
+    elif sub_choice == "3":
+        public_ip_info()
+
+elif choice == "25" or choice == "025":
+    print("""
+╔══════════════════════════════════════╗
+║          DNS RESOLUTION              ║
+╠══════════════════════════════════════╣
+║  1 • DNS Test                        ║
+║  2 • Resolver Test                   ║
+║  3 • Resolution Time                 ║
+║  4 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("RESOLVE > ").strip()
+
+    if sub_choice == "1":
+        dns_test()
+    elif sub_choice == "2":
+        resolver_test()
+    elif sub_choice == "3":
+        resolution_time()
+
+elif choice == "26" or choice == "026":
+    print("""
+╔══════════════════════════════════════╗
+║          CONNECTIVITY                ║
+╠══════════════════════════════════════╣
+║  1 • Internet Test                   ║
+║  2 • DNS Test                        ║
+║  3 • HTTP Test                       ║
+║  4 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("CONNECT > ").strip()
+
+    if sub_choice == "1":
+        internet_test()
+    elif sub_choice == "2":
+        dns_connectivity_test()
+    elif sub_choice == "3":
+        http_connectivity_test()
+
+elif choice == "27" or choice == "027":
+    print("""
+╔══════════════════════════════════════╗
+║        SYSTEM INFORMATION            ║
+╠══════════════════════════════════════╣
+║  1 • CPU                             ║
+║  2 • RAM                             ║
+║  3 • Storage                         ║
+║  4 • Operating System                ║
+║  5 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("SYSTEM > ").strip()
+
+    if sub_choice == "1":
+        cpu_information()
+    elif sub_choice == "2":
+        ram_information()
+    elif sub_choice == "3":
+        storage_information()
+    elif sub_choice == "4":
+        operating_system_information()
+
+elif choice == "28" or choice == "028":
+    print("""
+╔══════════════════════════════════════╗
+║       TEST PAYLOAD GENERATOR         ║
+╠══════════════════════════════════════╣
+║  1 • Basic Test String               ║
+║  2 • Long Input Test                 ║
+║  3 • Special Characters              ║
+║  4 • Unicode Test                    ║
+║  5 • Base64 Test                     ║
+║  6 • URL Encoding Test               ║
+║  7 • Custom Test Input               ║
+║  8 • Back                            ║
+╚══════════════════════════════════════╝
+""")
+
+    sub_choice = input("PAYLOAD > ").strip()
+
+    if sub_choice == "1":
+        basic_test_payload()
+    elif sub_choice == "2":
+        long_input_test()
+    elif sub_choice == "3":
+        special_character_test()
+    elif sub_choice == "4":
+        unicode_test()
+    elif sub_choice == "5":
+        base64_test()
+    elif sub_choice == "6":
+        url_encoding_test()
+    elif sub_choice == "7":
+        custom_test_input()
+elif choice == "0" or choice == "00":
                 print(couleur("\n👋 Goodbye! ⚡DRAGON TECH⚡ signing off...\n", COULEURS.GREEN + COULEURS.BOLD))
                 sys.exit(0)
             else:
