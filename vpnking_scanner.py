@@ -9,7 +9,7 @@
   ╚████╔╝ ██║     ██║ ╚████║      ██║  ██╗██║██║ ╚████║╚██████╔╝
    ╚═══╝  ╚═╝     ╚═╝  ╚═══╝      ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝
 
-           👑 VPN-KING SCANNER – BY Eden lite & TDF 👑
+           ⚡ VPN-KING SCANNER – BY DRAGON TECH ⚡
         Advanced Subdomain Recon & Network Analysis Tool
 """
 
@@ -110,7 +110,7 @@ def is_installed():
 
 def install_script():
     print(couleur("\n🔧 FIRST USE – AUTOMATIC INSTALLATION", COULEURS.GREEN + COULEURS.BOLD))
-    print(couleur("This tool will configure itself to run using the 'vpnking' command under SIRMA framework.", COULEURS.BLUE))
+    print(couleur("This tool will configure itself to run using the 'vpnking' command under ⚡DRAGON TECH⚡ framework.", COULEURS.BLUE))
 
     try:
         response = input(couleur("👉 Continue? (y/n): ", COULEURS.YELLOW)).strip().lower()
@@ -131,7 +131,7 @@ def install_script():
     try:
         shutil.copy2(source, destination)
         os.chmod(destination, os.stat(destination).st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
-        print(couleur("✅ Script deployed to " + destination + " (SIRMA core)", COULEURS.GREEN))
+        print(couleur("✅ Script deployed to " + destination + " (⚡DRAGON TECH⚡ core)", COULEURS.GREEN))
     except Exception as e:
         print(couleur("❌ Deployment error: " + str(e), COULEURS.RED))
         return
@@ -144,8 +144,8 @@ def install_script():
             content = f.read()
         if path_line not in content:
             with open(bashrc, "a") as f:
-                f.write("\n# Added by SIRMA VPN-KING SCANNER\n" + path_line + "\n")
-            print(couleur("✅ PATH updated (SIRMA environment)", COULEURS.GREEN))
+                f.write("\n# Added by ⚡DRAGON TECH⚡ VPN-KING SCANNER\n" + path_line + "\n")
+            print(couleur("✅ PATH updated (⚡DRAGON TECH⚡ environment)", COULEURS.GREEN))
         else:
             print(couleur("ℹ️ PATH already configured.", COULEURS.BLUE))
     except Exception as e:
@@ -158,11 +158,11 @@ def install_script():
         if alias_line not in content:
             with open(bashrc, "a") as f:
                 f.write(alias_line + "\n")
-            print(couleur("✅ Alias added (SIRMA CLI)", COULEURS.GREEN))
+            print(couleur("✅ Alias added (⚡DRAGON TECH⚡ CLI)", COULEURS.GREEN))
     except:
         pass
 
-    print(couleur("\n🎉 SIRMA INSTALLATION COMPLETE!", COULEURS.GREEN + COULEURS.BOLD))
+    print(couleur("\n🎉 ⚡DRAGON TECH⚡ INSTALLATION COMPLETE!", COULEURS.GREEN + COULEURS.BOLD))
     print(couleur("Restart Termux or run:", COULEURS.BLUE))
     print(couleur("   source ~/.bashrc", COULEURS.YELLOW))
     print(couleur("Then run: vpnking", COULEURS.GREEN))
@@ -172,14 +172,14 @@ def install_script():
 def show_logo():
     logo = """
 """ + couleur("╔═══════════════════════════════════════════╗", COULEURS.YELLOW) + """
-""" + couleur("║", COULEURS.YELLOW) + "  " + couleur("👑 VPN-KING SCANNER – SIRMA & TDF 👑", COULEURS.GREEN + COULEURS.BOLD) + "  " + couleur("║", COULEURS.YELLOW) + """
+""" + couleur("║", COULEURS.YELLOW) + "  " + couleur("⚡ VPN-KING SCANNER – DRAGON TECH ⚡", COULEURS.GREEN + COULEURS.BOLD) + "  " + couleur("║", COULEURS.YELLOW) + """
 """ + couleur("║", COULEURS.YELLOW) + "  " + couleur("  Advanced Recon & Network Intelligence  ", COULEURS.BLUE) + " " + couleur("║", COULEURS.YELLOW) + """
-""" + couleur("║", COULEURS.YELLOW) + "  " + couleur("         Version 2.0 – SIRMA Core         ", COULEURS.GRAY) + couleur("║", COULEURS.YELLOW) + """
+""" + couleur("║", COULEURS.YELLOW) + "  " + couleur("         Version 2.0 – ⚡DRAGON TECH⚡         ", COULEURS.GRAY) + couleur("║", COULEURS.YELLOW) + """
 """ + couleur("╚═══════════════════════════════════════════╝", COULEURS.YELLOW)
     print(logo)
 
 # ---------- PASSWORD SYSTEM ----------
-PASSWORD_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".sirma_pass")
+PASSWORD_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".dragontech_pass")
 
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
@@ -196,21 +196,21 @@ def verify_password():
     attempts = 3
     while attempts > 0:
         try:
-            password = getpass.getpass(couleur("🔑 SIRMA Password: ", COULEURS.YELLOW))
+            password = getpass.getpass(couleur("🔑 ⚡DRAGON TECH⚡ Password: ", COULEURS.YELLOW))
         except KeyboardInterrupt:
-            print(couleur("\n👋 Exiting SIRMA system...", COULEURS.GREEN))
+            print(couleur("\n👋 Exiting ⚡DRAGON TECH⚡ system...", COULEURS.GREEN))
             sys.exit(0)
         if hash_password(password) == stored_hash:
-            print(couleur("✅ SIRMA Access Granted.", COULEURS.GREEN))
+            print(couleur("✅ ⚡DRAGON TECH⚡ Access Granted.", COULEURS.GREEN))
             return True
         else:
             attempts -= 1
             print(couleur("❌ Incorrect password. " + str(attempts) + " attempt(s) remaining.", COULEURS.RED))
-    print(couleur("🚫 SIRMA Access Denied.", COULEURS.RED))
+    print(couleur("🚫 ⚡DRAGON TECH⚡ Access Denied.", COULEURS.RED))
     sys.exit(1)
 
 def change_password():
-    print(couleur("\n🔐 SIRMA Password Change", COULEURS.BLUE))
+    print(couleur("\n🔐 ⚡DRAGON TECH⚡ Password Change", COULEURS.BLUE))
     try:
         old = getpass.getpass(couleur("Old password: ", COULEURS.YELLOW))
     except KeyboardInterrupt:
@@ -231,7 +231,7 @@ def change_password():
         return
     with open(PASSWORD_FILE, "w") as f:
         f.write(hash_password(new_pass))
-    print(couleur("✅ SIRMA password updated successfully.", COULEURS.GREEN))
+    print(couleur("✅ ⚡DRAGON TECH⚡ password updated successfully.", COULEURS.GREEN))
 
 # ---------- COMMON SUBDOMAINS WORDLIST ----------
 COMMON_SUBDOMAINS = [
@@ -873,7 +873,7 @@ def ssl_certificate_info():
 def show_menu():
     print()
     print(couleur("  ┌─────────────────────────────────────┐", COULEURS.YELLOW))
-    print(couleur("  │", COULEURS.YELLOW) + couleur("        👑 SIRMA MAIN MENU 👑         ", COULEURS.GREEN + COULEURS.BOLD) + couleur("│", COULEURS.YELLOW))
+    print(couleur("  │", COULEURS.YELLOW) + couleur("        ⚡ DRAGON TECH MAIN MENU ⚡         ", COULEURS.GREEN + COULEURS.BOLD) + couleur("│", COULEURS.YELLOW))
     print(couleur("  ├─────────────────────────────────────┤", COULEURS.YELLOW))
     print(couleur("  │", COULEURS.YELLOW) + couleur("  [01] Subdomain Scanner              ", COULEURS.CYAN) + couleur("│", COULEURS.YELLOW))
     print(couleur("  │", COULEURS.YELLOW) + couleur("  [02] Port Scanner                   ", COULEURS.CYAN) + couleur("│", COULEURS.YELLOW))
@@ -904,7 +904,7 @@ def main():
     while True:
         try:
             show_menu()
-            choice = input(couleur("\n  👑 SIRMA > ", COULEURS.GREEN + COULEURS.BOLD)).strip()
+            choice = input(couleur("\n  ⚡ DRAGON TECH > ", COULEURS.GREEN + COULEURS.BOLD)).strip()
 
             if choice == "1" or choice == "01":
                 subdomain_scanner()
@@ -931,7 +931,7 @@ def main():
             elif choice == "12":
                 change_password()
             elif choice == "0" or choice == "00":
-                print(couleur("\n👋 Goodbye! SIRMA signing off...\n", COULEURS.GREEN + COULEURS.BOLD))
+                print(couleur("\n👋 Goodbye! ⚡DRAGON TECH⚡ signing off...\n", COULEURS.GREEN + COULEURS.BOLD))
                 sys.exit(0)
             else:
                 print(couleur("❌ Invalid option. Try again.", COULEURS.RED))
